@@ -3,6 +3,7 @@ body {
     padding: 0;
     color: antiquewhite;
     font-family: "Cuprum", sans-serif;
+    background-color: white;
 }
 
 input:active,
@@ -17,6 +18,11 @@ a {
     text-decoration: none;
     color: #e52e04;
     font-size: 20px;
+    padding: 0 10px;
+}
+
+.logo_a {
+    padding: 0;
 }
 
 ul,
@@ -25,29 +31,29 @@ li {
     cursor: pointer;
 }
 
-li {
-    padding: 0 10px;
-}
-
 .container {
     margin: auto;
     max-width: 1060px;
+    padding: 0 50px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
 }
 
-.logo img {
+.logo {
     width: 130px;
     border-radius: 0 0 5px 5px;
 }
 
 .menu {
     width: 60%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .menu_category {
@@ -80,6 +86,10 @@ li {
     border-radius: 5px;
 }
 
+main {
+    min-height: 65vh;
+}
+
 .catalog {
     width: 100%;
     display: flex;
@@ -90,6 +100,7 @@ li {
 
 .card {
     width: 30%;
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
@@ -148,6 +159,11 @@ footer {
 
 .hide {
     display: none;
+}
+
+.not_found {
+    color: #dcdcdc;
+    font-size: 45px;
 }
 
 .modal_block {
@@ -223,4 +239,87 @@ textarea {
 
 .modal_button_buy {
     width: 50%;
+}
+
+@media (max-width: 870px) {
+    .card {
+        width: 40%;
+    }
+
+    .catalog {
+        justify-content: space-evenly;
+    }
+
+    .header {
+        padding-bottom: 15px;
+    }
+
+    .button_add__block {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 670px) {
+    .header {
+        padding-bottom: 0;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn_add {
+        position: absolute;
+        top: 20px;
+        right: 50px;
+    }
+
+    .menu_category {
+        padding: 0;
+    }
+}
+
+@media (max-width: 630px) {
+    .card {
+        width: 60%;
+    }
+
+    .modal_submit {
+        width: 60%;
+    }
+}
+
+@media (max-width: 500px) {
+    a {
+        font-size: 17px;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    .modal_abb_content {
+        flex-direction: column;
+    }
+
+    .modal_add_img_block {
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+    .modal_abb_content_block {
+        margin: auto;
+    }
+
+    .modal_submit {
+        width: 85%;
+        margin: auto;
+    }
+
+    .modal_button_buy {
+        margin: auto;
+    }
 }

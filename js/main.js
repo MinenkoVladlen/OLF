@@ -10,19 +10,20 @@ const renderBase = [];
 function getDB() {
     $('.catalog').text('');
     const local = JSON.parse(localStorage.getItem('olf'));
-    renderCard(local);
     $.each(local, function (key, val) {
-        renderBase.push(val);
+        renderBase.unshift(val);
     });
     $.getJSON("js/db.json", function (arg, val) {
-        renderCard(arg);
         $.each(arg, function (key, val) {
             renderBase.push(val);
         });
+        renderCard(renderBase)
     });
 }
 
 function renderCard(data) {
+    $(".catalog").text('');
+    console.log(data)
     $.each(data, function (key, val) {
         let itemBody = `<li class="card" data-id=${val.id}>
             <div class="catalog_img">
@@ -56,24 +57,13 @@ function openModal(e) {
     if (card) {
         let dataAttr = $(card).attr("data-id");
         $(".modal_item").removeClass("hide");
-        $.getJSON("js/db.json", function (data) {
-            const item = data.find((item) => item.id == dataAttr);
-            if (item) {
-                $(".modal_abb_content_img").attr("src", item.image);
-                $(".modal_submit_h3").text(item.title);
-                $(".modal_submit_status").text(item.status === "new" ? "новый" : "Б/У");
-                $(".modal_submit_description").text(item.description);
-                $(".modal_submit_price").text(item.price);
-            } else {
-                $.each(DBase, function (key, val) {
-                    const item = DBase.find((item) => item.id == dataAttr);
-                    $(".modal_abb_content_img").attr("src", item.image);
-                    $(".modal_submit_h3").text(item.title);
-                    $(".modal_submit_status").text(item.status === "new" ? "новый" : "Б/У");
-                    $(".modal_submit_description").text(item.description);
-                    $(".modal_submit_price").text(item.price);
-                });
-            }
+        $.each(renderBase, function (key, val) {
+            const item = renderBase.find((item) => item.id == dataAttr);
+            $(".modal_abb_content_img").attr("src", item.image);
+            $(".modal_submit_h3").text(item.title);
+            $(".modal_submit_status").text(item.status === "new" ? "новый" : "Б/У");
+            $(".modal_submit_description").text(item.description);
+            $(".modal_submit_price").text(item.price);
         });
     }
 }
@@ -112,33 +102,58 @@ $(".modal_button_submit").on("click", function (e) {
     itemObj.id = counter++;
     itemObj.image = 'data:image/jpeg;base64,' + infoPhoto.base64;
     DBase.push(itemObj);
+    renderBase.unshift(itemObj)
     localStorage.setItem("olf", JSON.stringify(DBase));
-    getDB();
+    renderCard(renderBase);
+    $('.input_search').val('');
     CloseModal();
 });
-
 $('.menu_category').on('click', event => {
+    $('.input_search').val('');
     $('.catalog').text('');
     const target = event.target;
+    console.log(target)
     if (target.tagName === 'A') {
-        console.log(renderBase);
         const result = renderBase.filter(item => item.category === target.dataset.category)
         renderCard(result);
-        console.log(result);
     }
-    //проверка на клик по ссылку, пишется тег всегда с большой "A"
-    // if(target.tagName === 'A') {
-    //     const result = dataBase.filter(item => item.category === target.dataset.category)
-    //     renderCard(result);
-    // }
 })
-
-$(".modal_close").click(CloseModal);
 
 $(".btn_add").click(function () {
     $(".modal_add").removeClass("hide");
     $(".modal_abb_content_img").attr('src', 'img/no_poster.jpg')
 });
+
+$('.input_search').on('input', function () {
+    $('.not_found').addClass('hide');
+    const valueSearch = $('.input_search').val().trim().toLowerCase();
+    if (valueSearch.length <= 2) {
+        renderCard(renderBase);
+    } else {
+        $('.catalog').text('')
+        const result = renderBase.filter(item => item.title.toLowerCase().includes(valueSearch) ||
+            item.description.toLowerCase().includes(valueSearch));
+        if (result.length == 0) {
+            $('.catalog').text('')
+            $('.not_found').removeClass('hide');
+        } else {
+            $('.catalog').text('')
+            renderCard(result);
+        }
+    }
+})
+
+$(document).on('keydown', function(e) {
+    if (e.keyCode == 27) {
+        CloseModal();
+    }
+});
+
+$('.logo').click(function () {
+    location.reload();
+});
+
+$(".modal_close").click(CloseModal);
 
 $('.modal_submit').on("input", CheckForm)
 

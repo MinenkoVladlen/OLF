@@ -15,9 +15,7 @@
 <head>
     <div class="container">
         <div class="header">
-            <div class="logo">
-                <a href="#"><img src="img/logo.jpg" alt="logo olf"/></a>
-            </div>
+            <a href="#" class="logo_a"><img src="img/logo.jpg" alt="logo olf" class="logo"/></a>
             <nav class="menu">
                 <ul class="menu_category">
                     <li><a href="#" data-category="people">Люди</a></li>
@@ -27,9 +25,11 @@
                     <li><a href="#" data-category="technics">Техника</a></li>
                 </ul>
             </nav>
-            <button class="btn btn_add">
-                Подать обьявление
-            </button>
+            <div class="button_add__block">
+                <button class="btn btn_add">
+                    Подать обьявление
+                </button>
+            </div>
         </div>
         <div class="search">
             <label>
@@ -43,6 +43,7 @@
         <ul class="catalog">
 
         </ul>
+        <h1 class="not_found hide">К сожалению ничего не найдено</h1>
     </div>
 </main>
 <footer>
@@ -73,7 +74,7 @@
             <button class="modal_close">✘</button>
         </div>
         <div class="modal_abb_content">
-            <div>
+            <div class="modal_add_img_block">
                 <img
                         src="img/logo2.jpg"
                         alt="img card"
@@ -109,8 +110,8 @@
                 <label>
                     Состояние
                     <select name="status">
-                        <option val='new'>Б/У</option>
-                        <option val='old'>Новое</option>
+                        <option value='new'>Новое</option>
+                        <option value='old'>Б/У</option>
                     </select>
                 </label>
                 <label>
