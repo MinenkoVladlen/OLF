@@ -23,7 +23,6 @@ function getDB() {
 
 function renderCard(data) {
     $(".catalog").text('');
-    console.log(data)
     $.each(data, function (key, val) {
         let itemBody = `<li class="card" data-id=${val.id}>
             <div class="catalog_img">
@@ -112,7 +111,6 @@ $('.menu_category').on('click', event => {
     $('.input_search').val('');
     $('.catalog').text('');
     const target = event.target;
-    console.log(target)
     if (target.tagName === 'A') {
         const result = renderBase.filter(item => item.category === target.dataset.category)
         renderCard(result);
