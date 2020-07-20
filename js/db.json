@@ -1,103 +1,101 @@
 [
-    {
-        "id": 0,
-        "title": "front-end разраб",
-        "description": "Отдам в хорошую IT-компанию, чистий опрятный, трудолюбивый, пунктуальный.",
-        "price": 150000,
-        "status": "old",
-        "image": "img/img0.jpg",
-        "category": "people"
-    },
-    {
-        "id": 1,
-        "title": "Штаны",
-        "description": "Почти новые штаны, купил не понравились",
-        "price": 40,
-        "status": "old",
-        "image": "img/img1.jpg",
-        "category": "clothes"
-    },
-    {
-        "id": 2,
-        "title": "Шуба",
-        "description": "Шуба в нашем замечательном магазине, новая, не ношена не крашена",
-        "price": 10000,
-        "status": "new",
-        "image": "img/img2.jpg",
-        "category": "clothes"
-    },
-    {
-        "id": 3,
-        "title": "Носки",
-        "description": "Почти новые, продаю по ненадобности",
-        "price": 50,
-        "status": "old",
-        "image": "img/img3.jpeg",
-        "category": "clothes"
-    },
-    {
-        "id": 4,
-        "title": "Стул",
-        "description": "Стул с 4-я ножками и одной спинкой",
-        "price": 125,
-        "status": "old",
-        "image": "img/img4.jpeg",
-        "category": "furniture"
-    },
-    {
-        "id": 5,
-        "title": "Стол",
-        "description": "Стол коричневый, без повреждений",
-        "price": 500,
-        "status": "old",
-        "image": "img/img5.jpg",
-        "category": "furniture"
-    }
-    ,
-    {
-        "id": 6,
-        "title": "Жига",
-        "description": "Жига, зеленая, 4 колеса, иногда ездить - иногда нет",
-        "price": 5000,
-        "status": "old",
-        "image": "img/img6.jpg",
-        "category": "car"
-    },
-    {
-        "id": 7,
-        "title": "Тойота",
-        "description": "Не бита, в родном окрасе, царапина на левой двери",
-        "price": 200000,
-        "status": "old",
-        "image": "img/img7.jpg",
-        "category": "car"
-    },
-    {
-        "id": 8,
-        "title": "Митсубиси",
-        "description": "Продам авто красно - черно - белое, индивидуальный цвет. Без пробега по нормальным дорогам ",
-        "price": 150000,
-        "status": "old",
-        "image": "img/img8.jpg",
-        "category": "car"
-    }
-    ,
-    {
-        "id": 9,
-        "title": "Ноутбук",
-        "description": "Продам ноутбук, серый, зарядка не держит",
-        "price": 15000,
-        "status": "old",
-        "image": "img/img9.png",
-        "category": "technics"
-    },
-    {
-        "id": 10,
-        "title": "Нокла",
-        "description": "Раритет от нокии, без зарядки, зарядка держит с первого дня покупки",
-        "price": 200,
-        "status": "old",
-        "image": "img/img10.jpg",
-        "category": "technics"
-    }
+  {
+    "id": 0,
+    "title": "front-end разраб",
+    "description": "Отдам в хорошую IT-компанию, чистий опрятный, трудолюбивый, пунктуальный.",
+    "price": 15000,
+    "status": "old",
+    "image": "img/img0.jpg",
+    "category": "people"
+  },
+  {
+    "id": 1,
+    "title": "Штаны",
+    "description": "Почти новые штаны, проилил на них кофе во время готовки",
+    "price": 40,
+    "status": "old",
+    "image": "img/img1.jpg",
+    "category": "clothes"
+  },
+  {
+    "id": 2,
+    "title": "Шуба",
+    "description": "Шуба в нашем замечательном магазине, новая, не ношена не крашена",
+    "price": 10000,
+    "status": "new",
+    "image": "img/img2.jpg",
+    "category": "clothes"
+  },
+  {
+    "id": 3,
+    "title": "Носки",
+    "description": "Почти новые, продаю по ненадобности",
+    "price": 50,
+    "status": "old",
+    "image": "img/img3.jpeg",
+    "category": "clothes"
+  },
+  {
+    "id": 4,
+    "title": "Стул",
+    "description": "Стул с 4-я ножками и одной спинкой",
+    "price": 125,
+    "status": "old",
+    "image": "img/img4.jpeg",
+    "category": "furniture"
+  },
+  {
+    "id": 5,
+    "title": "Стол",
+    "description": "Стол коричневый, без повреждений",
+    "price": 500,
+    "status": "old",
+    "image": "img/img5.jpg",
+    "category": "furniture"
+  },
+  {
+    "id": 6,
+    "title": "Жига",
+    "description": "Жига, зеленая, 4 колеса, иногда ездить - иногда нет",
+    "price": 5000,
+    "status": "old",
+    "image": "img/img6.jpg",
+    "category": "car"
+  },
+  {
+    "id": 7,
+    "title": "Тойота",
+    "description": "Не бита, в родном окрасе, царапина на левой двери",
+    "price": 200000,
+    "status": "old",
+    "image": "img/img7.jpg",
+    "category": "car"
+  },
+  {
+    "id": 8,
+    "title": "Митсубиси",
+    "description": "Продам авто красно - черно - белое, индивидуальный цвет. Без пробега по нормальным дорогам ",
+    "price": 150000,
+    "status": "old",
+    "image": "img/img8.jpg",
+    "category": "car"
+  },
+  {
+    "id": 9,
+    "title": "Ноутбук",
+    "description": "Продам ноутбук, серый, зарядка не держит",
+    "price": 15000,
+    "status": "old",
+    "image": "img/img9.png",
+    "category": "technics"
+  },
+  {
+    "id": 10,
+    "title": "Нокла",
+    "description": "Раритет от нокии, без зарядки, зарядка держит с первого дня покупки",
+    "price": 200,
+    "status": "old",
+    "image": "img/img10.jpg",
+    "category": "technics"
+  }
 ]
